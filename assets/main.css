@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:400,700&display=swap');
+
+body {
+  font-family: 'Droid Serif';
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2.75rem 0 1rem;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+.remark-code,
+.remark-inline-code {
+  font-family: 'Fira Code', monospace;
+  font-size: 1em;
+}

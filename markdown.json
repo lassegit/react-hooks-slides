@@ -1,0 +1,4 @@
+{
+  "build": "slides.md",
+  "files": ["slides/_slides.md"]
+}

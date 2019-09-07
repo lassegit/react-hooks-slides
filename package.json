@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "./node_modules/.bin/remarker",
+    "build": "./node_modules/.bin/remarker build",
+    "build:markdown": "./node_modules/markdown-include/bin/cli.js markdown.json"
+  },
+  "dependencies": {
+    "markdown-include": "^0.4.3",
+    "remarker": "^1.10.0"
+  }
+}

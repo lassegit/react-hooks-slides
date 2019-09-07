@@ -1,0 +1,19 @@
+port: 6275
+dest: build
+out: index.html
+source: slides.md
+title: 'React Hooks'
+assets: ['assets', 'favicon.ico']
+css: ''
+cssFiles: ['assets/main.css']
+script: ''
+scriptFiles: []
+livereload: true
+livereloadPort: 35729
+navigation:
+  scroll: false
+remarkConfig:
+  highlightStyle: atom-one-dark
+  highlightLanguage: javascript
+  highlightLines: true
+  ratio: '16:9'
