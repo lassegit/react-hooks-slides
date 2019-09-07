@@ -1,7 +1,12 @@
 {
+  "name": "react-hooks-slides",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "./node_modules/.bin/remarker",
-    "build": "./node_modules/.bin/remarker build",
+    "build": "yarn build:markdown && yarn build:remark",
+    "build:remark": "./node_modules/.bin/remarker build",
     "build:markdown": "./node_modules/markdown-include/bin/cli.js markdown.json"
   },
   "dependencies": {
