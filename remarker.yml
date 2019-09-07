@@ -1,5 +1,5 @@
 port: 6275
-dest: build
+dest: docs
 out: index.html
 source: slides.md
 title: 'React Hooks'
