@@ -5,7 +5,5 @@
 #include "slides/21.md"
 #include "slides/22.md"
 #include "slides/23.md"
-#include "slides/24.md"
-#include "slides/25.md"
-#include "slides/26.md"
+#include "slides/3.md"
 #include "slides/4.md"

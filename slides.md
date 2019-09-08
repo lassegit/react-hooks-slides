@@ -16,10 +16,7 @@ class: midlle
 - 2: Hooks
   - 2.1: useState
   - 2.2: useEffect
-  - 2.3: useReducer
-  - 2.4: useRef
-  - 2.5: useMemo
-  - 2.6: useContext
+  - 2.3: useContext
 - 3: Pitfalls
 - 4: Testing hooks
 
@@ -84,12 +81,12 @@ const getMovies = async () => {
 - useState
 - useEffect
 - useContext
-- useReducer
-- useRef
-- useMemo
 
 ### Additional Hooks (more specialized usage)
 
+- useReducer
+- useMemo
+- useRef
 - useCallback
 - useImperativeHandle
 - useLayoutEffect
@@ -151,35 +148,19 @@ Example.
 
 ---
 
-# useReducer
-
-```javascript
-const [state, dispatch] = useReducer(reducer, initialState, init);
-```
-
----
-
-# useRef
-
-```javascript
-const ref = useRef(initialValue);
-```
-
----
-
-# useMemo
-
-```javascript
-  useMemo(() => function, input)
-```
-
----
-
 # useContext
 
 ```javascript
 const context = useContext(contextValue);
 ```
+
+---
+
+# Pitfalls
+
+- Stale state
+- Endless loop
+- Side effects outside `useEffect`
 
 ---
 
