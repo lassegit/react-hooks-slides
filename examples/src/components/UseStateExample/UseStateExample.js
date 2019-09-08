@@ -1,10 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const UseStateExample = props => {
-  return <div>UseStateExample…</div>;
-};
-
-UseStateExample.propTypes = {};
+const UseStateExample = () => <div>UseStateExample…</div>;
 
 export default UseStateExample;
