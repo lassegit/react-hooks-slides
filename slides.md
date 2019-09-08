@@ -158,7 +158,22 @@ const context = useContext(contextValue);
 
 # Pitfalls
 
-- Stale state
+- Stale state/prop
+
+```javascript
+const Foo = ({ id }) => {
+  const [post, setPost] = useState(initialState);
+
+  useEffect(() => {
+    // When prop is updated, id is stale/old.
+    // Use "react-hooks/exhaustive-deps" eslint rule to avoid
+    // https://github.com/facebook/react/issues/14920
+    fetch(`/blog/${id}.json`)
+      .then(res => res.json())
+      .then(data => setPost(data));
+  }, []); // Add all props to dependency array
+};
+```
 
 - Endless loop
 
