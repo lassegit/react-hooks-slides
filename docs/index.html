@@ -126,7 +126,7 @@ const [state, setState] = useState(initialState);
   // setState({ myKey: myValue }) won't work or use useReducer
 ```
 
-Example:
+Example.
 
 ---
 
@@ -172,8 +172,47 @@ const context = useContext(contextValue);
 # Pitfalls
 
 - Stale state
+
 - Endless loop
+
+```javascript
+const [movies, setMovies] = useState({});
+useEffect(() => {
+  fetch('/movies.json')
+    .then(res => res.json)
+    .then(data => setMovies(data));
+});
+```
+
+- calling `useEffect` conditionally
+
+```javascript
+function Foo({ bar }) {
+  if (bar) {
+    React.useEffect(); // <-- that's an error
+    // React Hook "React.useEffect" is called conditionally. React Hooks must be
+    // called in the exact same order in every component render.
+  }
+}
+```
+
 - Side effects outside `useEffect`
+
+```javascript
+const Foo () => {
+  let = movies = null
+  if (!movies) {
+    // fetch('/movies.json') fetch movies
+    return null
+  }
+
+  return <ul>{movies.map(movie => <li>{movie}</li>)}</ul>
+}
+```
+
+???
+
+https://github.com/kentcdodds/react-hooks-pitfalls/tree/master/slides
 
 ---
 
@@ -183,9 +222,21 @@ If you test _"implementation"_ instead of **"behaviour"**, refactor using hooks 
 
 Example.
 
-<!-- https://reactjs.org/docs/hooks-faq.html#how-to-test-components-that-use-hooks -->
+???
+
+- show implementation test
+- show behaviour test (with "react-testing-library")
+  https://github.com/kentcdodds/react-hooks-pitfalls/blob/master/slides/08.mdx
+  <!-- https://reactjs.org/docs/hooks-faq.html#how-to-test-components-that-use-hooks -->
 
 ---
+
+class: middle, center
+
+# The End
+
+![React logo](assets/react.svg)
+
 
 </textarea>
     <script src="remark.js"></script>
