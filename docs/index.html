@@ -172,6 +172,15 @@ const context = useContext(contextValue);
 # Pitfalls
 
 - Stale state/prop
+- Endless loop
+- calling `useEffect` conditionally
+- Side effects outside `useEffect`
+
+Adding `eslint-plugin-react-hooks` plugin will catches hooks erros, and ensure correct usage.
+
+---
+
+# Stale state/prop
 
 ```javascript
 const Foo = ({ id }) => {
@@ -188,7 +197,9 @@ const Foo = ({ id }) => {
 };
 ```
 
-- Endless loop
+---
+
+# Endless loop
 
 ```javascript
 const [movies, setMovies] = useState({});
@@ -196,10 +207,15 @@ useEffect(() => {
   fetch('/movies.json')
     .then(res => res.json)
     .then(data => setMovies(data));
-});
+}); // Usually you would need a dependency array
+
+// useEffect will run after all renders, and setMovies will trigger a re-render
+// Remember the dependency array
 ```
 
-- calling `useEffect` conditionally
+---
+
+# Calling hooks conditionally
 
 ```javascript
 function Foo({ bar }) {
@@ -207,27 +223,30 @@ function Foo({ bar }) {
     React.useEffect(); // <-- that's an error
     // React Hook "React.useEffect" is called conditionally. React Hooks must be
     // called in the exact same order in every component render.
+    // Instead use if statement inside useEffect
   }
 }
 ```
 
-- Side effects outside `useEffect`
+---
+
+# Side effects outside `useEffect`
 
 ```javascript
 const Foo () => {
-  let = movies = null
+  let = movies = null; // Side note use `const` when possible
   if (!movies) {
-    // fetch('/movies.json') fetch movies
-    return null
+    fetch('/movies.json')
+      .then(res => res.json)
+      .then(data => movies = data);
+    return null;
   }
 
-  return <ul>{movies.map(movie => <li>{movie}</li>)}</ul>
+  return <ul>{movies.map(movie => <li>{movie}</li>)}</ul>;
+  // The above example has nothing to do with hooks, its merely a function
+  // Side effects goes in useEffect and state in useState
 }
 ```
-
-???
-
-https://github.com/kentcdodds/react-hooks-pitfalls/tree/master/slides
 
 ---
 
