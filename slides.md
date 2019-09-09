@@ -252,7 +252,9 @@ class: middle, center
 # The End
 
 Slides: https://lasse.tech/react-hooks-slides
+
 Slides github: https://github.com/lassegit/react-hooks-slides
+
 Examples: https://github.com/lassegit/react-hooks-slides-examples
 
 ![React logo](assets/react.svg)
