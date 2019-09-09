@@ -8,8 +8,6 @@ class: middle, center
 
 ---
 
-class: midlle
-
 # Agenda
 
 - 1: What is a hook?
@@ -30,7 +28,7 @@ class: midlle
 
 --
 
-Implementation of _statefullness_ and _side effects_ in functional components.
+Implementation of _statefulness_ and _side effects_ in functional components.
 
 --
 
@@ -98,7 +96,7 @@ const getMovies = async () => {
 
 ---
 
-# useState - functional statefullness
+# useState - functional statefulness
 
 ```javascript
 const [state, setState] = useState(initialState);
@@ -106,7 +104,7 @@ const [state, setState] = useState(initialState);
 
 --
 
-1. `initialState` sets the, yes surprise, inital value (can also be a function)
+1. `initialState` sets the, yes surprise, initial value (can also be a function)
 
 --
 
@@ -143,13 +141,6 @@ useEffect(() => {
 
 Example.
 
-???
-
-- Changing the thinking away from object orientated programming to functional programming:
-
-```javascript
-```
-
 ---
 
 # useContext
@@ -157,6 +148,8 @@ Example.
 ```javascript
 const context = useContext(contextValue);
 ```
+
+Example.
 
 ---
 
@@ -167,7 +160,7 @@ const context = useContext(contextValue);
 - calling `useEffect` conditionally
 - Side effects outside `useEffect`
 
-Adding `eslint-plugin-react-hooks` plugin will catches hooks erros, and ensure correct usage.
+Adding `eslint-plugin-react-hooks` plug-in will catches hooks errors, and ensure correct usage.
 
 ---
 
@@ -243,16 +236,14 @@ const Foo () => {
 
 # Testing hooks
 
-If you test _"implementation"_ instead of **"behaviour"**, refactor using hooks will break tests. If you test behaviour, React hooks is merely an implementation detail.
+If you test _"implementation"_ instead of **"behavior"**, refactor using hooks will break tests. If you test behavior, React hooks is merely an implementation detail.
 
-Example.
+- functions or data bound to the class doesn't exist, e.g. `instance()` and `state()` can't be used
+- mocks can still be used to simulate data and verify correct functions calls (don't test `handleClick` was click)
 
-???
+Check out "react-testing-library" to help enforce behavior testing: https://github.com/testing-library/react-testing-library
 
-- show implementation test
-- show behaviour test (with "react-testing-library")
-  https://github.com/kentcdodds/react-hooks-pitfalls/blob/master/slides/08.mdx
-  <!-- https://reactjs.org/docs/hooks-faq.html#how-to-test-components-that-use-hooks -->
+Example: `OnOffSwitch`.
 
 ---
 
@@ -260,6 +251,9 @@ class: middle, center
 
 # The End
 
-![React logo](assets/react.svg)
+Slides: https://lasse.tech/react-hooks-slides
+Slides github: https://github.com/lassegit/react-hooks-slides
+Examples: https://github.com/lassegit/react-hooks-slides-examples
 
+![React logo](assets/react.svg)
 
