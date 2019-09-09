@@ -13,7 +13,5 @@
     "markdown-include": "^0.4.3",
     "remarker": "^1.10.0"
   },
-  "devDependencies": {
-    "husky": "^3.0.5"
-  }
+  "devDependencies": {}
 }
