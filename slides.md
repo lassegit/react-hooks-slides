@@ -115,7 +115,7 @@ const [state, setState] = useState(initialState);
   // setState({ myKey: myValue }) won't work or use useReducer
 ```
 
-Example.
+Example: Making an input component stateful.
 
 ---
 
@@ -139,7 +139,7 @@ useEffect(() => {
 > - useEffect(fn, []) // no state
 > - useEffect(fn, [these, states])
 
-Example.
+Example: Adding side effects (updating document title & showing window resizing).
 
 ---
 
@@ -149,7 +149,7 @@ Example.
 const context = useContext(contextValue);
 ```
 
-Example.
+Example: Context in functional components (locale and theme) and custom components.
 
 ---
 
